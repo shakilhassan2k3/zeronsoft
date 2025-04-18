@@ -3,60 +3,153 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ZeronSoft.com is For Sale</title>
-  <link rel="icon" href="/image/zeron.png" type="image/png" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>ZeronSoft</title>
   <style>
     body {
       margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #1E262D;
-      color: #FFFFFF;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
+      font-family: Arial, sans-serif;
+      background-color: white;
+      color: black;
+    }
+    .logo {
+      width: 100px;
+      margin: 20px;
+    }
+
+    .hero {
       text-align: center;
-      padding: 2rem;
+      padding: 80px 20px;
+      background: white;
     }
-    .container {
-      max-width: 600px;
-      background-color: #29292E;
-      padding: 2rem;
-      border-radius: 1.5rem;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+
+    .hero h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
     }
-    h1 {
-      font-size: 2.2rem;
-      color: #FF4C4C;
-      margin-bottom: 1rem;
+
+    .hero p {
+      font-size: 1.2em;
+      color: #666;
     }
-    p {
-      font-size: 1.1rem;
-      color: #DDDDDD;
-      margin-bottom: 2rem;
-    }
-    .contact-btn {
-      background-color: #FF4C4C;
+
+    button {
+      background-color: #f97316;
       color: white;
-      padding: 0.75rem 1.5rem;
       border: none;
-      border-radius: 0.5rem;
-      font-size: 1rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: background-color 0.3s;
+      padding: 12px 24px;
+      font-size: 1em;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 20px;
     }
-    .contact-btn:hover {
-      background-color: #e84040;
+
+    .section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .section h2 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      color: #f97316;
+    }
+
+    .cards {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    @media (min-width: 768px) {
+      .cards {
+        flex-direction: row;
+        justify-content: center;
+      }
+    }
+
+    .card {
+      background-color: #1e1e1e;
+      color: white;
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 300px;
+      margin: 0 auto;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .dark {
+      background-color: black;
+      color: white;
+    }
+
+    .light {
+      background-color: white;
+      color: black;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: black;
+      color: white;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>zeronsoft.com is for sale!</h1>
-    <p>This premium domain is perfect for tech startups, software companies, or anyone seeking a strong online brand.</p>
-    <a href="mailto:zeronsoft@gmail.com" class="contact-btn">Contact to Make an Offer</a>
-  </div>
+  <img src="/image/logo.png" alt="ZeronSoft Logo" class="logo" />
+  <header class="hero">
+   
+    <h1>Welcome to ZeronSoft</h1>
+    <p>Your Passionate Partner in Tech Innovation</p>
+    <button onclick="scrollToSection('services')">Get Started</button>
+  </header>
+
+  <section id="services" class="section dark">
+    <h2>Our Services</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Custom Software</h3>
+        <p>We deliver tailor-made software solutions to meet your unique business needs.</p>
+      </div>
+      <div class="card">
+        <h3>Web & Mobile Apps</h3>
+        <p>Responsive, scalable, and engaging apps to enhance your digital presence.</p>
+      </div>
+      <div class="card">
+        <h3>Tech Consulting</h3>
+        <p>Expert advice to streamline operations and grow through smart technology.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section light">
+    <h2>Why Choose ZeronSoft?</h2>
+    <p>
+      We're not just developers — we're your technology partners. With a passionate team and a client-first approach, we ensure that your software works for <em>you</em>.
+    </p>
+    <button onclick="contactUs()">Contact Us</button>
+  </section>
+
+  <footer>
+    <p>&copy; <span id="year"></span> ZeronSoft. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+    }
+
+    function contactUs() {
+      alert("You clicked Contact Us! Replace this with a form or email link.");
+    }
+  </script>
 </body>
 </html>

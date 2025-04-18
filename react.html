@@ -1,0 +1,78 @@
+import React from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { motion } from "framer-motion";
+import Image from "next/image";
+
+const LandingPage = () => {
+  return (
+    <main className="bg-white text-black min-h-screen">
+      <section className="flex flex-col items-center justify-center text-center py-20 px-4 bg-white">
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <Image
+            src="/zerons.png"
+            alt="ZeronSoft Logo"
+            width={150}
+            height={150}
+            className="mx-auto mb-4"
+          />
+          <h1 className="text-4xl font-bold text-black mb-2">Welcome to ZeronSoft</h1>
+          <p className="text-lg text-gray-700 max-w-xl mx-auto">
+            Your Passionate Partner in Tech Innovation. We build intelligent, user-focused software solutions for modern businesses.
+          </p>
+          <div className="mt-6">
+            <Button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-xl shadow-md">
+              Get Started
+            </Button>
+          </div>
+        </motion.div>
+      </section>
+
+      <section className="py-16 px-6 bg-black text-white">
+        <h2 className="text-3xl font-semibold text-orange-500 text-center mb-10">Our Services</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <Card className="bg-gray-900 hover:bg-gray-800 transition-all">
+            <CardContent className="p-6">
+              <h3 className="text-xl font-bold mb-2">Custom Software</h3>
+              <p>We deliver tailor-made software solutions to meet your unique business needs.</p>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-gray-900 hover:bg-gray-800 transition-all">
+            <CardContent className="p-6">
+              <h3 className="text-xl font-bold mb-2">Web & Mobile Apps</h3>
+              <p>Responsive, scalable, and engaging apps to enhance your digital presence.</p>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-gray-900 hover:bg-gray-800 transition-all">
+            <CardContent className="p-6">
+              <h3 className="text-xl font-bold mb-2">Tech Consulting</h3>
+              <p>Expert advice to streamline operations and grow through smart technology.</p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      <section className="py-16 px-6 bg-white text-black text-center">
+        <h2 className="text-3xl font-semibold text-orange-500 mb-6">Why Choose ZeronSoft?</h2>
+        <p className="max-w-3xl mx-auto mb-6 text-gray-700">
+          We're not just developers — we're your technology partners. With a passionate team and a client-first approach, we ensure that your software works for *you*.
+        </p>
+        <Button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-xl shadow-md">
+          Contact Us
+        </Button>
+      </section>
+
+      <footer className="bg-black text-white py-6 text-center">
+        <p>&copy; {new Date().getFullYear()} ZeronSoft. All rights reserved.</p>
+      </footer>
+    </main>
+  );
+};
+
+export default LandingPage;
